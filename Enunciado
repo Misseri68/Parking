@@ -1,5 +1,5 @@
 Ejercicio Parking
-    Escribe una clase llamada Parrking que reciba el número de plazas del parking y el número de
+    Escribe una clase llamada Parking que reciba el número de plazas del parking y el número de
     coches existentes en el sistema. Se deben crear tantos threads como coches haya. El parking
     dispondrá de una única entrada y una única salida. En la entrada de vehículos habrá un
     dispositivo de control que permita o impida el acceso de los mismos al parking, dependiendo
@@ -24,3 +24,14 @@ Posible solución Parking:
     en la barrera para entrar, los detiene mediante una operación wait() hasta que les llega el
     turno de ser atendidos. Al salir del parking, el método salida() provoca que haya un hueco
     dentro del parking, por lo que se le da paso al siguiente coche mediante la operación signal().
+
+
+Se entregará un zip que se llamará Practica2_NombreAlumno_ApellAlumno. Dentro del zip estarán los .java necesarios, además de un .txt con los detalles necesarios.
+
+Calificación:
+
+- Programa Java cumpliendo requisitos de enunciado: 5 puntos
+- Tratamiento de excepciones: 1 punto
+- Generación de Javadoc: 1 punto
+- README.txt explicando las clases, métodos y cómo se ejecuta el programa: 1 punto
+- Defensa: 2 puntos

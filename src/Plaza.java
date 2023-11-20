@@ -23,7 +23,4 @@ public class Plaza {
         return numPlaza;
     }
 
-    public void setNumPlaza(int numPlaza) {
-        this.numPlaza = numPlaza;
-    }
 }

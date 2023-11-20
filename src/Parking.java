@@ -1,7 +1,16 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Esta clase representa un parking que contiene coches y plazas de aparcamiento.
+ * Los coches pueden intentar entrar en el parking si hay plazas disponibles.
+ *
+ * @author Ariadna López Abalo
+ */
 public class Parking {
+
+    // ...
+
 
     int numCoches;
     int numPlazas;
@@ -30,12 +39,9 @@ public class Parking {
         this.plazas = plazas;
     }
 
-
-    public void inicializarCoches(){
-        for (int i = 0; i < numCoches; i++) {
-            coches.add(new Coche((i+1), this));
-        }
-    }
+    /**
+     * Inicializa las plazas del parking.
+     */
 
     public void inicializarPlazas(){
         for (int i = 0; i < numPlazas; i++) {
@@ -43,9 +49,28 @@ public class Parking {
         }
     }
 
-    //Comprobará si hay plazas disponibles. Devolverá la plaza en caso de que haya, y si no devolverá null
-    //TODO: no sé muy bien si debería pasarle como argumento una lista de las plazas o no.
-    public Plaza comprobarPlazas(List<Plaza> plazas){
+    /**
+     * Inicializa los coches del parking y los inicia como hilos.
+     */
+
+    public void inicializarCoches(){
+        for (int i = 0; i < numCoches; i++) {
+            coches.add(new Coche((i+1), this));
+            coches.get(i).start();
+
+        }
+    }
+
+
+    /** Comprueba si hay plazas disponibles en el parking.
+     * @return La plaza disponible, o null si no hay plazas libres.
+     */
+
+
+    //TODO: no sé muy bien si debería pasarle como argumento una lista de las plazas o no
+    // (Puedo pasarlos por aquí con la lista local de la clase Parking, o la lista cogida de la clase Coche. Supongo que la mejor es la primera opción ya que
+    // la lista pertenece a esta clase, no a Plaza (pero se puede hacer de ambas formas correctamente no?).
+    public synchronized Plaza comprobarPlazas(){
         for (Plaza plaza:plazas) {
             if (!plaza.isOcupada()){
                 return plaza;
@@ -53,14 +78,4 @@ public class Parking {
         }
         return null;
     }
-
-    //Buscará la plaza pasada por argumento en la lista de plazas y cambiará su estado a "ocupada". Devolverá verdadero si se ha ocupado y falso si no se ha hecho bien.
-    //TODO: cuidado con que la plaza pasada tenga la misma referencia del objeto, y que no sólo coincidan sus atributos.
-    public boolean ocuparPlaza(Plaza plaza){
-        for (Plaza p : plazas) {
-            if
-        }
-        return false;
-    }
-
 }

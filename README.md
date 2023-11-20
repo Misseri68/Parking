@@ -1,4 +1,4 @@
-# Parking App
+# Parking
 
 Esta aplicación simula un parking con coches (hilos) en Java.
 

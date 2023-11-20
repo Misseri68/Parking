@@ -17,30 +17,26 @@ public class Parking {
     private List<Coche> coches = new ArrayList<>();
     private List<Plaza> plazas = new ArrayList<>();
 
+    /**
+     * Constructor de la clase Parking.
+     *
+     * @param numCoches pasado desde main para determinar el numero de coches que se inicializarán en List<Coche> coches.
+     * @param numPlazas pasado desde main para determinar el numero de coches que se inicializarán en List<Plaza> plazas.
+     * */
+
     public Parking(int numCoches, int numPlazas) {
         this.numCoches = numCoches;
         this.numPlazas = numPlazas;
     }
-
-
-    public List<Coche> getCoches() {
-        return coches;
-    }
-
-    public void setCoches(List<Coche> coches) {
-        this.coches = coches;
-    }
-
+    /**
+     * Getter de la lista de plazas, utilizado en el método comprobarPlazas()
+     * */
     public List<Plaza> getPlazas() {
         return plazas;
     }
 
-    public void setPlazas(List<Plaza> plazas) {
-        this.plazas = plazas;
-    }
-
     /**
-     * Inicializa las plazas del parking.
+     * Inicializa las plazas del parking y las guarda en el List plazas
      */
 
     public void inicializarPlazas(){
